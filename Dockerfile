@@ -20,6 +20,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists/* \
  && chmod +x /docker-entry-point
  
+RUN apt-get update && apt-get -y install dnsmasq ethtool wget pimd bridge-utils
+ 
 COPY install_thrift.sh  /install_thrift.sh
 
 RUN apt-get update
